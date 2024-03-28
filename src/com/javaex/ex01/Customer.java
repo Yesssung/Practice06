@@ -5,15 +5,14 @@ public class Customer extends Person{
 	private int cNo;
 	private int point;
 	
-	public Customer(int cNo, int point) {
-		super(null, null);
-		this.setcNo(cNo);
-		this.setPoint(point);
+	public Customer() {
+		System.out.println("Customer 생성자 (0) 호출");
 	}
 	public Customer(String name, String hp, int cNo, int point) {
 		super(name,hp);
-		this.setcNo(cNo);
-		this.setPoint(point);
+		this.cNo = cNo;
+		this.point = point;
+		System.out.println("Customer 생성자 (4) 호출");
 	}
 	
 	public int getcNo() {
@@ -29,8 +28,9 @@ public class Customer extends Person{
 		this.point = point;
 	}
 	
+	@Override
 	public void showInfo() {
-		System.out.printf("#이름: %s #핸드폰: %s #고객번호: %d, #포인트번호: %d", super.getName(), super.getHp(), cNo, point);
+		System.out.printf("#이름: %s #핸드폰: %s #고객번호: %d, #포인트번호: %d", super.getName(), super.getHp(), cNo/*this.cNo라고 써도 됌*/, point);
 	}
 	
 	

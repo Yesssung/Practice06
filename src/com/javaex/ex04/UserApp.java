@@ -4,33 +4,25 @@ public class UserApp {
 
 	public static void main(String[] args) {
 		
-		String[]user = new String[3];
+		User[] users = new User[3];
+		// User 클래스와 하위 클래스 모두 담을 수 있는 배열
+		User u01 = new Customer("jws","j1234","정우성",1000);
+		User u02 = new Customer("yjs","y2345","이효리",2000);
+		User u03 = new Customer("master","m7788","운영자",5_000_000);
 		
-		for(int a = 0; a < 3; a++) {
-		Customer cs1 = new Customer("jws","j1234","정우성",1000);
-		System.out.printf("#아이디: %s, #패스워드: %s, #이름: %s #포인트: %d");
+		// 세명의 사용자를 배열에 등록
+		// 참조 자료형의 배열은 참조 객체의 주소가 할당 
+		users[0] = u01;
+		users[1] = u02;
+		users[2] = u03;
 		
-		Customer cs2 = new Customer("yjs","y2345","이효리",2000);
-		System.out.printf("#아이디: %s, #패스워드: %s, #이름: %s #포인트: %d");
-		
-		Employee em = new Employee("master","m7788","운영자",500);
-		System.out.printf("#아이디: %s, #패스워드: %s, #이름: %s #월급: %d");
-		
-		User newUser = new User();
-		newUser.setId(id);
-		newUser.setPassword(password);
-		newUser.setName(name);
-		
-		user[a] = newUser;
-		
-		
+		for(int i = 0; i < users.length; i++) {
+			users[i].showInfo();
 		}
 		
-		
-		for(int i = 0; i < user.length; i++) {
-			user[i].showInfo();
-		}
-		System.out.println("운영자의 월급은 5,000,000만원 입니다.");
+		// 다운 캐스팅
+		int salary = ((Employee)u03).getSalary();
+		System.out.println("운영자의 월급은 " + salary + "원 입니다.");
 	}
 
 }

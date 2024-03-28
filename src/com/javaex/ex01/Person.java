@@ -6,14 +6,16 @@ public class Person {
 	private String hp;
 	
 	public Person() {
+		System.out.println("생성자 Person(0) 호출");
 	}
 	public Person(String name, String hp) {
-		this.setName(name);
-		this.setHp(hp);
+		this.name = name;
+		this.hp = hp; ;
+		System.out.println("생성자 Person(2) 호출");
 	}
 	
 	public String getName() {
-		return name;
+		return name; // return this.name 이라고 해도 됌!
 	}
 	public void setName(String name) {
 		this.name = name;

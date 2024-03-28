@@ -9,8 +9,8 @@ public class Shape {
 		
 	}
 	public Shape(String fillColor, String lineColor) {
-		this.setFillColor(fillColor);
-		this.setLineColor(lineColor);
+		this.fillColor = fillColor;
+		this.lineColor = lineColor;
 	}
 	public String getFillColor() {
 		return fillColor;
@@ -26,7 +26,7 @@ public class Shape {
 	}
 
 	
-	public void showInfo(String fillColor, String lineColor) {
+	public void showInfo() {
 		System.out.println("====삼각형====");
 		System.out.println("#면색:"+fillColor);
 		System.out.println("#선색:"+lineColor);
